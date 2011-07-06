@@ -1,0 +1,2 @@
+recursive-include tw/tinymce/templates *
+recursive-include tw/tinymce/static *
