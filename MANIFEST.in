@@ -1,2 +1,2 @@
-recursive-include tw/tinymce/templates *
-recursive-include tw/tinymce/static *
+recursive-include tw2/tinymce/templates *
+recursive-include tw2/tinymce/static *
