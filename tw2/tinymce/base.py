@@ -22,3 +22,27 @@ def _get_available_languages():
         if match:
             langs.append(match.groups(0)[0])
     return langs
+
+from formencode.validators import UnicodeString, Validator
+from genshi.core import Markup, stripentities
+
+class MarkupConverter(UnicodeString):
+    """A validator for TinyMCE widget.
+
+    Will make sure the text that reaches python will be unicode un-xml-escaped 
+    HTML content.
+
+    Will also remove any trailing <br />s tinymce sometimes leaves at the end
+    of pasted text.
+    """
+    def __init__(self, **kw):
+        UnicodeString.__init__(self, **kw)
+
+    cleaner = re.compile(r'(\s*<br />\s*)+$').sub
+    if_missing=''
+    def _to_python(self, value, state=None):
+        value = super(MarkupConverter, self)._to_python(value, state)
+        if value:
+            value = Markup(stripentities(value)).unescape()
+            return self.cleaner('', value)
+

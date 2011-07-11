@@ -2,30 +2,6 @@ import tw2.core as twc
 import base 
 from tw2.forms import TextArea
 import re
-from formencode.validators import UnicodeString, Validator
-from genshi.core import Markup, stripentities
-
-
-class MarkupConverter(UnicodeString):
-    """A validator for TinyMCE widget.
-
-    Will make sure the text that reaches python will be unicode un-xml-escaped 
-    HTML content.
-
-    Will also remove any trailing <br />s tinymce sometimes leaves at the end
-    of pasted text.
-    """
-    def __init__(self, **kw):
-        UnicodeString.__init__(self, **kw)
-
-    cleaner = re.compile(r'(\s*<br />\s*)+$').sub
-    if_missing=''
-    def _to_python(self, value, state=None):
-        value = super(MarkupConverter, self)._to_python(value, state)
-        if value:
-            value = Markup(stripentities(value)).unescape()
-            return self.cleaner('', value)
-
 
 class TinyMCE(TextArea):
     # declare static resources here
@@ -51,7 +27,7 @@ class TinyMCE(TextArea):
         paste_convert_headers_to_strong = False,
         paste_strip_class_attributes = "all",
     )
-    validator = MarkupConverter()
+    validator = base.MarkupConverter()
     include_dynamic_js_calls = True
 
     def prepare(self):
