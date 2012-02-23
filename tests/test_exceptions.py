@@ -26,10 +26,10 @@ def setup():
 def test_exception_no_id():
     w = tw2.tinymce.TinyMCEWidget()
     try:
-        w.display()
+        print w.display()
         assert(False)
     except ValueError as e:
-        assert(str(e) == 'QRCodeWidget must be supplied an id')
+        assert(str(e) == 'TinyMCEWidget must be supplied an id')
 
 def test_exception_bad_locale():
     w = tw2.tinymce.TinyMCEWidget(id="test", locale="klingon")
