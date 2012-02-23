@@ -8,7 +8,7 @@ See http://toscawidgets.org/documentation/WidgetBrowser for more information
 
 import widgets
 
-class DemoTinymce(widgets.TinyMCE):
+class DemoTinymce(widgets.TinyMCEWidget):
     # Provide default parameters, value, etc... here
     # default = <some-default-value>
     pass

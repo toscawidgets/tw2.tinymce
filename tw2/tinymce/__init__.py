@@ -1,2 +1,2 @@
-from widgets import TinyMCE
+from widgets import *
 from base import MarkupConverter

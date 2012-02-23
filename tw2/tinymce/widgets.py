@@ -3,7 +3,7 @@ import base
 from tw2.forms import TextArea
 import re
 
-class TinyMCE(TextArea):
+class TinyMCEWidget(TextArea):
     # declare static resources here
     # you can remove either or both of these, if not needed
     resources = [base.tinymce_js, base.tinymce_dir]
@@ -31,7 +31,7 @@ class TinyMCE(TextArea):
     include_dynamic_js_calls = True
 
     def prepare(self):
-        super(TinyMCE, self).prepare()
+        super(TinyMCEWidget, self).prepare()
         options = self.default_options.copy()
         options.update(self.mce_options)
         if self.locale in self.langs:
