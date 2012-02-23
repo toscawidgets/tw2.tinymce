@@ -1,5 +1,11 @@
 from setuptools import setup, find_packages
 
+# Ridiculous as it may seem, we need to import multiprocessing and
+# logging here in order to get tests to pass smoothly on python 2.7.
+# Thanks RJ!
+import multiprocessing
+import logging
+
 setup(
     name='tw2.tinymce',
     version='2.0.b1',
@@ -17,6 +23,17 @@ setup(
     namespace_packages = ['tw2'],
     zip_safe=False,
     include_package_data=True,
+    tests_require = [
+        'nose',
+        'BeautifulSoup',
+        'Genshi',
+        'mako',
+        # formencode isn't actually needed, but is just here to patch up
+        # tw2.forms,
+        'formencode',
+        'strainer',
+        'WebTest'
+    ],
     test_suite = 'nose.collector',
     entry_points="""
         [tw2.widgets]
