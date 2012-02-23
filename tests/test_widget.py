@@ -1,16 +1,11 @@
-from tw.core.testutil import WidgetTestCase
-from tw.tinymce import *
+from tw2.core.testbase import  WidgetTest
+import tw2.tinymce
 
-class TestWidget(WidgetTestCase):
+class TestDemoWidget(WidgetTest):
     # place your widget at the TestWidget attribute
-    TestWidget = Tinymce
-    # Initilization args. go here 
-    widget_kw = {}
+    widget = tw2.tinymce.TinyMCEWidget
 
-    def test_render(self):
-        # Asserts 'foo' and 'test' (the test widget's id) appear in rendered 
-        # string when 'foo' is passed as value to render
-        self.assertInOutput(['foo', 'test'], "foo")
-        # Asserts 'ohlalala' does not appear in rendered string when render 
-        # is called without args
-        self.assertNotInOutput(['ohlalala'])
+    # Initilization args. go here
+    attrs = {'id' : 'test_tinymce'}
+    params = {}
+    expected = """<textarea rows="25" cols="79" id="test_tinymce" name="test_tinymce"></textarea>"""
