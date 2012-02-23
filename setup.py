@@ -15,6 +15,7 @@ setup(
     url='https://github.com/gregjurman/tw2.tinymce',
     install_requires=[
         "tw2.core",
+        "tw2.forms",
         'Mako',
         ## Add other requirements here
         # "Genshi",
