@@ -38,7 +38,7 @@ class MarkupConverter(UnicodeString):
     def __init__(self, **kw):
         UnicodeString.__init__(self, **kw)
 
-    cleaner = re.compile(r'(\s*<br />\s*)+$').sub
+    cleaner = re.compile(r'(\s*<br[ ]{0,1}/>\s*)+$').sub
     if_missing=''
     def _to_python(self, value, state=None):
         value = super(MarkupConverter, self)._to_python(value, state)
