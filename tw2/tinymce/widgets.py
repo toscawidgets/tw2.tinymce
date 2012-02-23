@@ -40,7 +40,6 @@ class TinyMCEWidget(TextArea):
             options.setdefault('language', self.locale)
         else:
             raise ValueError, "Language file for '%s' not available" % self.locale
-            self.locale = 'en'
         if options.setdefault('mode', 'exact') == 'exact':
             options['elements'] = self.attrs['name']
         # Next line creates a javascript call which will be placed at bodybottom
