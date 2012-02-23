@@ -32,6 +32,8 @@ class TinyMCEWidget(TextArea):
 
     def prepare(self):
         super(TinyMCEWidget, self).prepare()
+        if not hasattr(self, 'id') or 'id' not in self.attrs:
+            raise ValueError, 'TinyMCEWidget must be supplied an id'
         options = self.default_options.copy()
         options.update(self.mce_options)
         if self.locale in self.langs:
