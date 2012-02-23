@@ -37,7 +37,7 @@ class TinyMCEWidget(TextArea):
         if self.locale in self.langs:
             options.setdefault('language', self.locale)
         else:
-            warn("Language file for '%s' not available" % self.locale)
+            raise ValueError, "Language file for '%s' not available" % self.locale
             self.locale = 'en'
         if options.setdefault('mode', 'exact') == 'exact':
             options['elements'] = self.attrs['name']
