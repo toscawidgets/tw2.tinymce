@@ -12,7 +12,7 @@ setup(
     description='TinyMCE for ToscaWidgets 2',
     author='Greg Jurman',
     author_email='gdj2214@rit.edu',
-    url='https://github.com/gregjurman/tw2.tinymce',
+    url='https://github.com/toscawidgets/tw2.tinymce',
     install_requires=[
         "tw2.core",
         "tw2.forms",
