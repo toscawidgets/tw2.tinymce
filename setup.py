@@ -17,6 +17,7 @@ setup(
         "tw2.core",
         "tw2.forms",
         'Mako',
+        'formencode',
         ## Add other requirements here
         # "Genshi",
         ],
