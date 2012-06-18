@@ -25,7 +25,7 @@ class TestDemoWidgetUnicodery(WidgetTest):
     # Initilization args. go here
     attrs = {
         'id' : 'test_tinymce',
-        'value': 'ȳ',
+        'value': u'ä',
     }
     params = {}
-    expected = """<textarea rows="25" cols="79" id="test_tinymce" name="test_tinymce"></textarea>"""
+    expected = u"""<textarea rows="25" cols="79" id="test_tinymce" name="test_tinymce">ä</textarea>"""
