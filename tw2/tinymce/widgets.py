@@ -27,7 +27,7 @@ class TinyMCEWidget(TextArea):
         paste_convert_headers_to_strong = False,
         paste_strip_class_attributes = "all",
     )
-    validator = base.MarkupConverter()
+    validator = base.MarkupConverter(outputEncoding=None)
     include_dynamic_js_calls = True
 
     def prepare(self):
