@@ -34,6 +34,7 @@ setup(
         # tw2.forms,
         'formencode',
         'strainer',
+        'sieve',
         'WebTest'
     ],
     test_suite = 'nose.collector',
