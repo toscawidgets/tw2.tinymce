@@ -8,7 +8,7 @@ import logging
 
 setup(
     name='tw2.tinymce',
-    version='2.0.b4',
+    version='2.0.b5',
     description='TinyMCE for ToscaWidgets 2',
     author='Greg Jurman',
     author_email='gdj2214@rit.edu',
